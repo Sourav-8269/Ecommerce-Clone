@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import {Link} from "react-router-dom"
 
 import {
     Box,
@@ -10,7 +11,6 @@ import {
     Stack,
     Collapse,
     Icon,
-    Link,
     Image,
     Popover,
     PopoverTrigger,
@@ -38,7 +38,7 @@ import DrawerExample from './Drawer';
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box width="90%" margin="auto">
+      <Box width="100%" position="fixed" height="300px" overflow="hidden" top="0" zIndex="1" >
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
@@ -107,7 +107,8 @@ import DrawerExample from './Drawer';
               _hover={{
                 bg: 'pink.300',
               }}>
-              Sign in
+                {/* Sign in */}
+              <Link to="/login" >Sign in</Link>
             </Button>
             {/* <div
               display={{ base: 'none', md: 'inline-flex' }}
@@ -155,14 +156,14 @@ import DrawerExample from './Drawer';
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
-                //   color={linkColor}
-                color="black"
+                  // color={linkColor}
+                  color="red"
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,
                   }}>
                   {navItem.label}
-                  {navItem.subLabel}
+                  {/* {navItem.subLabel} */}
                 </Link>
               </PopoverTrigger>
   

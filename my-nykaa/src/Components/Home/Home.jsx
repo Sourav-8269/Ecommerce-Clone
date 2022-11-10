@@ -1,7 +1,13 @@
-import { Spacer,Stack,Box,Image,H1, Heading } from '@chakra-ui/react'
+import { Spacer,Stack,Box,Image,H1, Heading, SimpleGrid } from '@chakra-ui/react'
 import React from 'react'
+import Signin from '../Signin'
 import Gallery1 from "./carousel1"
 import Gallery2 from './carousel2'
+import Gallery3 from './carousel3'
+import Gallery4 from './carousel4'
+
+import SimpleGridExample1 from './SimpleGrid1'
+import SimpleGridExample2 from './SimpleGrid2'
 // const mdiHome = require('@iconify/icons-mdi/home');
 const Home = () => {
   return (
@@ -9,12 +15,22 @@ const Home = () => {
         <Gallery1 />
         <Spacer />
         <Spacer/>
-        <Box display="flex" mt="50"  mb="50" alignItems="center">
-          <Image ml="150" width="80%" src="https://images-static.nykaa.com/uploads/a47a4ec4-140c-4035-8b85-629db661a638.jpg?tr=w-1200,cm-pad_resize" alt="" />
+        <Box display="flex" mt="50"  mb="50" justifyContent="center" >
+          <Image  width="80%"  src="https://images-static.nykaa.com/uploads/a47a4ec4-140c-4035-8b85-629db661a638.jpg?tr=w-1200,cm-pad_resize" alt="" />
 
         </Box>
         <Gallery2 />
-        <Heading as="h1" size="lg" >TOP BRANDS</Heading>
+        <Heading as="h5" size="lg" mt="50" mb="30" fontWeight="400" color="blackAlpha.700" > TOP BRANDS</Heading>
+        <SimpleGridExample1/>
+       
+        <Gallery3/>
+        <Heading as="h5" size="lg" mt="50" mb="30" fontWeight="400" color="blackAlpha.700" >ONLY AT NYKAA</Heading>
+        <SimpleGridExample2/>
+        <Box bg="#fbe2e8" >
+          <img  src="https://images-static.nykaa.com/uploads/6892016b-f17f-4ddb-b463-452ef88fc8d6.png?tr=w-1200,cm-pad_resize" alt="" />
+        <Gallery4/>
+        </Box>
+
 
     </Box>
   )

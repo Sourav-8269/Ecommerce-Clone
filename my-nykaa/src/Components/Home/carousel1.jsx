@@ -2,7 +2,10 @@ import React from 'react'
 import Carousel from 'better-react-carousel'
 
 function Gallery1(){
+  const style={marginTop:"5%" }
   return (
+    <div style={style}>
+
     <Carousel cols={1} rows={1} gap={10} loop={true}  autoplay="1000" breakpoint="800" >
       <Carousel.Item>
         <img width="100%" src="https://images-static.nykaa.com/uploads/439d01a8-aa05-462d-9c25-6ef5dee9a4fd.jpg?tr=w-1200,cm-pad_resize" />
@@ -24,6 +27,7 @@ function Gallery1(){
       </Carousel.Item>
       {/* ... */}
     </Carousel>
+    </div>
   )
 }
 export default Gallery1;
