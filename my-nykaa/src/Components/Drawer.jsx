@@ -9,6 +9,7 @@ import {
     useDisclosure,
     Button,
     Input,
+    Image,
     Box
 
   } from '@chakra-ui/react'
@@ -37,7 +38,8 @@ function DrawerExample() {
             <DrawerHeader>Bag</DrawerHeader>
   
             <DrawerBody>
-              <Input placeholder='Type here...' />
+              {/* <Input placeholder='Type here...' /> */}
+              <Image borderRadius="100%" width="100%" height="250px" src="https://image.shutterstock.com/image-photo/paper-shopping-bag-on-pink-260nw-1993807145.jpg" />
             </DrawerBody>
   
             <DrawerFooter>

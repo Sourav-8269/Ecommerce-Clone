@@ -1,10 +1,13 @@
 import { Spacer,Stack,Box,Image,H1, Heading, SimpleGrid } from '@chakra-ui/react'
 import React from 'react'
+import Products from '../Products/Products'
+import ProductAddToCart from "../Products/AddProduct"
 import Signin from '../Signin'
 import Gallery1 from "./carousel1"
 import Gallery2 from './carousel2'
 import Gallery3 from './carousel3'
 import Gallery4 from './carousel4'
+import Logo from './Footer'
 
 import SimpleGridExample1 from './SimpleGrid1'
 import SimpleGridExample2 from './SimpleGrid2'
@@ -30,8 +33,13 @@ const Home = () => {
           <img  src="https://images-static.nykaa.com/uploads/6892016b-f17f-4ddb-b463-452ef88fc8d6.png?tr=w-1200,cm-pad_resize" alt="" />
         <Gallery4/>
         </Box>
+        <Box mt={10} mb={10} display="flex" justifyContent="center">
+          <img src="https://images-static.nykaa.com/uploads/58c1c0b0-5a0b-4614-acfc-3205e669d8a7.jpg?tr=w-1200,cm-pad_resize" alt="" />
 
-
+        </Box>
+        <Logo/>
+        <Products/>
+       
     </Box>
   )
 }
