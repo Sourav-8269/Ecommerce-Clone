@@ -11,8 +11,17 @@ import Logo from './Footer'
 
 import SimpleGridExample1 from './SimpleGrid1'
 import SimpleGridExample2 from './SimpleGrid2'
+import Cart from '../Products/Cart'
+import { AppContext } from '../Context/AuthContext'
 // const mdiHome = require('@iconify/icons-mdi/home');
+import { useContext,useEffect } from 'react'
+
+
 const Home = () => {
+  const {total}=useContext(AppContext);
+  useEffect(() => {
+
+  }, []);
   return (
     <Box backgroundColor="whitesmoke" >
         <Gallery1 />
@@ -37,8 +46,9 @@ const Home = () => {
           <img src="https://images-static.nykaa.com/uploads/58c1c0b0-5a0b-4614-acfc-3205e669d8a7.jpg?tr=w-1200,cm-pad_resize" alt="" />
 
         </Box>
+        {/* <Cart/> */}
         <Logo/>
-        <Products/>
+        {/* <Products/> */}
        
     </Box>
   )

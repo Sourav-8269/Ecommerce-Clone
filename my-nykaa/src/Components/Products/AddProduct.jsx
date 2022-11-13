@@ -57,7 +57,7 @@ import { FiShoppingCart } from 'react-icons/fi';
   );
 }
 
-function ProductAddToCart({title,image,price,off}) {
+function ProductAddToCart({title,image,price,off,click}) {
   const data = {
       isNew: true,
       imageURL:
@@ -67,12 +67,14 @@ function ProductAddToCart({title,image,price,off}) {
       rating: 4.2,
       numReviews: 34,
     };
+    // console.log(click)
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+    <Flex p={50} w="full" alignItems="center" justifyContent="center" onClick={()=>click(title)}>
       <Box
         bg={useColorModeValue('white', 'gray.800')}
         maxW="sm"
         borderWidth="1px"
+        // display="flex"
         rounded="lg"
         shadow="lg"
         position="relative">
@@ -85,12 +87,22 @@ function ProductAddToCart({title,image,price,off}) {
             bg="red.200"
           />
         )}
+        <Box display="flex">
+          <Image
+          
+            src={data.imageURL}
+            display="flex"
+            alignItems="center"
+            align="center"
+            // border="1px solid red"
+            justify="center"
+            alignContent="center"
+            // ml={6}
+            alt={`Picture of ${data.name}`}
+            roundedTop="lg"
+          />
 
-        <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
-          roundedTop="lg"
-        />
+        </Box>
 
         <Box p="6">
           <Box d="flex" alignItems="baseline">

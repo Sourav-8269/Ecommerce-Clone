@@ -7,6 +7,8 @@ const AuthContextProvider = ({children}) => {
     const [isAuth,setAuth]=useState(false);
     const [email,setemail]=useState(null);
     const [pass,setpass]=useState(null);
+    const [arr,setarr]=useState([]);
+    const [total,settotal]=useState(0);
 
     const login=(email,password)=>{
         setAuth(true);
@@ -18,7 +20,7 @@ const AuthContextProvider = ({children}) => {
         setemail(null);
         setpass(null);
     }
-    const value={isAuth,login,logout,email,pass};
+    const value={isAuth,login,logout,email,pass,arr,setarr,total,settotal};
   return (
     <AppContext.Provider value={value}>{children}</AppContext.Provider>
   )

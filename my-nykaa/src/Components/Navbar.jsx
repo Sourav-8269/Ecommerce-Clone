@@ -184,7 +184,11 @@ import { useContext } from 'react';
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
-                <Link
+                <Link 
+                // {"Categories"=={navItem.label}}){
+
+                // }
+                to="/categories"
                   p={2}
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
@@ -195,6 +199,7 @@ import { useContext } from 'react';
                     textDecoration: 'none',
                     color: linkHoverColor,
                   }}>
+                    
                   {navItem.label}
                   {/* {navItem.subLabel} */}
                 </Link>
@@ -326,12 +331,22 @@ import { useContext } from 'react';
       label: 'Categories',
       children: [
         {
-          label: 'Explore Design Work',
+          label: 'Mens',
           subLabel: 'Trending Design to inspire you',
           href: '#',
         },
         {
-          label: 'New & Noteworthy',
+          label: 'Womens',
+          subLabel: 'Up-and-coming Designers',
+          href: '#',
+        },
+        {
+          label: 'Kids',
+          subLabel: 'Trending Design to inspire you',
+          href: '#',
+        },
+        {
+          label: 'Fashion',
           subLabel: 'Up-and-coming Designers',
           href: '#',
         },
@@ -342,12 +357,22 @@ import { useContext } from 'react';
       label: 'Brands',
       children: [
         {
-          label: 'Job Board',
+          label: 'Maybelline',
           subLabel: 'Find your dream design job',
           href: '#',
         },
         {
-          label: 'Freelance Projects',
+          label: 'Lakme',
+          subLabel: 'An exclusive list for contract work',
+          href: '#',
+        },
+        {
+          label: 'Loreal',
+          subLabel: 'An exclusive list for contract work',
+          href: '#',
+        },
+        {
+          label: 'Lotus',
           subLabel: 'An exclusive list for contract work',
           href: '#',
         },
@@ -371,22 +396,22 @@ import { useContext } from 'react';
 // Makeup Rem
       children: [
         {
-          label: 'Job Board',
+          label: 'MakeUp',
           subLabel: 'Find your dream design job',
           href: '#',
         },
         {
-          label: 'Freelance Projects',
+          label: 'Eyes',
           subLabel: 'An exclusive list for contract work',
           href: '#',
         },
         {
-          label: 'Job Board',
+          label: 'Lips',
           subLabel: 'Find your dream design job',
           href: '#',
         },
         {
-          label: 'Freelance Projects',
+          label: 'Tools',
           subLabel: 'An exclusive list for contract work',
           href: '#',
         }
