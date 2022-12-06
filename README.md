@@ -15,27 +15,36 @@ Live:https://nykaaone.vercel.app/
  - Payment page 
 
 
-## Appendix
-
-Any additional information goes here
-
-
-## Authors
-
-- [@octokatherine](https://www.github.com/octokatherine)
-
-
-## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
-
-(https://imgur.com/a/kPnxPkH)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
-
-
 ## Screenshots
+
+1. Landing Page:
 
 ![App Screenshot](https://i.ibb.co/q19pM8h/Screenshot-1278.png)
 
+This is the first page of this website and it has dynamic navbar which is available in all other pages as well because it is exported
+as a component and it also contains SignIn and SignUp button through which we can authenticate as a user with one cart button as well.
+Some carousels are present with a footer at bottom.
+
+2. Sign Up Page:
+
+![](https://i.ibb.co/C8gjWHM/Screenshot-1280.png)
+
+New User can create an account and continue shopping.
+
+3.  Products Page:
+
+![](https://i.ibb.co/BNxY4Qh/Screenshot-1283.png)
+
+Products thumbnail are available here with rating and pricing.
+
+4. Cart Component:
+
+![](https://i.ibb.co/KKKqDXy/Screenshot-1285.png)
+
+All products added in cart will be shown here.
+
+5. Payment Page:
+
+![](https://i.ibb.co/QpkMpTg/Screenshot-1286.png)
+
+User can pay either using cod or online method.
