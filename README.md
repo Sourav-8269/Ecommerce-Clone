@@ -27,7 +27,7 @@ Some carousels are present with a footer at bottom.
 
 2. Sign Up Page:
 
-![](https://i.ibb.co/C8gjWHM/Screenshot-1280.png)
+![](https://i.ibb.co/bN4sSy5/Screenshot-1284.png)
 
 New User can create an account and continue shopping.
 
