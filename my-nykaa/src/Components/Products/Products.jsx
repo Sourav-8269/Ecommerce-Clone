@@ -3,7 +3,7 @@ import run_results from "./run_results.json"
 import ProductAddToCart from './AddProduct';
 
 import { useEffect,useContext } from 'react';
-import { Grid } from '@chakra-ui/react';
+import { Grid,SimpleGrid } from '@chakra-ui/react';
 import { AppContext } from '../Context/AuthContext';
 const Products = () => {
     useEffect(() => {
@@ -20,15 +20,18 @@ const Products = () => {
   }
   return (
     <div>
-      <Grid templateColumns='repeat(3, 1fr)' gap={6} mt={5}>
+      <SimpleGrid
+      mt={5}
+                minChildWidth="350px"
+                spacing="40px"
+                marginTop="30px"
+                textAlign="center"
+                border="0px solid red"
+              >
       {run_results.map((el)=>(
-         <ProductAddToCart key={el.selection2} title={el.selection2}  image={el.image} click={handleclick}   />
-        // <div key="el.image">
-        //   <p>{el.selection2}</p>
-        //   <img src={el.image} alt="" />
-        // </div>
+         <ProductAddToCart key={el.selection2} title={el.selection2} price={el.selection3}  image={el.image} click={handleclick}   />
       ))}
-      </Grid>
+      </SimpleGrid>
     </div>
   )
 }

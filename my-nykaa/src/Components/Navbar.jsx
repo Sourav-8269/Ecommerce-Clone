@@ -92,14 +92,16 @@ import { useContext } from 'react';
             </Flex>
           </Flex>
           {/* <Stack spacing={6} marginRight="2%"> */}
-              <InputGroup width="20%" marginRight="2%" bgColor="whitesmoke">
+          <Box display={{ base: 'none', md: 'block' }} ml={10}>
+              <InputGroup width="80%" marginRight="2%" bgColor="whitesmoke">
                 <InputLeftElement
                 
-                  pointerEvents='none'
-                  children={<Search2Icon color='gray.300' />}
+                pointerEvents='none'
+                children={<Search2Icon color='gray.300' />}
                 />
                 <Input type='tel' placeholder='Search' size="md" fontWeight="500" />
               </InputGroup>
+            </Box>
           {/* </Stack> */}
           <Stack
             flex={{ base: 1, md: 0 }}
@@ -262,6 +264,7 @@ import { useContext } from 'react';
   };
   
   const MobileNav = () => {
+    
     return (
       <Stack
         bg={useColorModeValue('white', 'gray.800')}
@@ -314,7 +317,7 @@ import { useContext } from 'react';
             align={'start'}>
             {children &&
               children.map((child) => (
-                <Link key={child.label} py={2} href={child.href}>
+                <Link to="/categories" key={child.label} py={2} href={child.href}>
                   {child.label}
                 </Link>
               ))}

@@ -24,37 +24,9 @@ const Cart = () => {
         })
     }  
 
-    // const cleanup = () => {
-    //     data.map((cal)=>{
-    //         return settotal((temp)=>temp+cal.selection3)
-    //     })
-    //     // clearInterval(timer);
-    //     // console.log("cleanup is called");
-    //     return;
-    // };
-    //   return cleanup;
-    // console.log(n)
-    // console.log(arr)
-    console.log(data)
+    // console.log(data)
     }, [n]);
 
-    // const [total,settotal]=useState(0);
-    // useEffect(()=>{
-    //     data.map((cal)=>{
-    //         settotal(total+cal.selection3)
-    //     })
-    //     console.log(total)
-    // },[n])
-    // console.log(total)
-    // useEffect(()=>{
-    //     data.map((cal)=>{
-    //         if(cal.selection3){
-    //              settotal((total)=>total+Number(cal.selection3))
-    
-    //         }
-    //     })
-    //     console.log(total)
-    // },[])
   return (
     <div>
         {/* <h1>Cart</h1> */}
@@ -64,8 +36,8 @@ const Cart = () => {
             <VStack key={e.url} gap={5} mb={5}> 
                 {/* {settotal(total+1)} */}
                 <img  src={e.image} alt="" />
-                <Heading size="md" as="h4">Name: {e.selection2}</Heading>
-                <Heading size="md" as="h4">Price: {e.selection3}</Heading>
+                <Heading size="md" as="h4"> {e.selection2}</Heading>
+                <Heading size="md" as="h4">Price: &#8377;{e.selection3}</Heading>
             </VStack>
         ))}
         <Total data={data}/>

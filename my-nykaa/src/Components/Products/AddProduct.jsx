@@ -4,10 +4,10 @@ import {
   Box,
   Image,
   Badge,
-  useColorModeValue,
   Icon,
   chakra,
   Tooltip,
+  Button
 } from '@chakra-ui/react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
@@ -57,21 +57,22 @@ import { FiShoppingCart } from 'react-icons/fi';
   );
 }
 
-function ProductAddToCart({title,image,price,off,click}) {
+function ProductAddToCart({title,image,price,click}) {
   const data = {
-      isNew: true,
+      isNew: price<500?true:false,
       imageURL:
         image,
       name: title,
-      price: 122,
+      price: price,
       rating: 4.2,
       numReviews: 34,
     };
+    // console.log(data)
     // console.log(click)
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center" onClick={()=>click(title)}>
+    <Flex p={50} w="full" alignItems="center" justifyContent="center" textAlign="left">
       <Box
-        bg={useColorModeValue('white', 'gray.800')}
+
         maxW="sm"
         borderWidth="1px"
         // display="flex"
@@ -118,7 +119,7 @@ function ProductAddToCart({title,image,price,off,click}) {
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
-              isTruncated>
+              >
               {data.name}
             </Box>
             <Tooltip
@@ -127,19 +128,19 @@ function ProductAddToCart({title,image,price,off,click}) {
               placement={'top'}
               color={'gray.800'}
               fontSize={'1.2em'}>
-              <chakra.a href={'#'} display={'flex'}>
-                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+              <chakra.a display={'flex'}>
+                <Icon onClick={()=>click(title)} cursor="pointer"  as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
               </chakra.a>
             </Tooltip>
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center">
             <Rating rating={data.rating} numReviews={data.numReviews} />
-            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+            <Box fontSize="2xl">
               <Box as="span" color={'gray.600'} fontSize="lg">
                 £
               </Box>
-              {data.price.toFixed(2)}
+              {data.price}
             </Box>
           </Flex>
         </Box>

@@ -53,7 +53,7 @@ function DrawerExample() {
         <Box cursor="pointer">
 
         
-        <img width="40px" ref={btnRef} colorScheme='teal' onClick={onOpen} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVuHpX0w9qZ0W2baNDn5x1QCp4Wbmd0n2s9g&usqp=CAU" alt="text" />
+        <img width="40px" ref={btnRef} onClick={onOpen} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVuHpX0w9qZ0W2baNDn5x1QCp4Wbmd0n2s9g&usqp=CAU" alt="text" />
   
         <Drawer
           isOpen={isOpen}
@@ -72,7 +72,7 @@ function DrawerExample() {
               {loading && <Image borderRadius="100%" width="100%" height="250px" src="https://image.shutterstock.com/image-photo/paper-shopping-bag-on-pink-260nw-1993807145.jpg" />}
               {loading&&<Heading textAlign="center" size="lg">Your Shopping Bag is empty</Heading>}
       
-              <Cart />
+              {!loading&&<Cart />}
               {/* <Products/> */}
             </DrawerBody>
 
@@ -81,7 +81,7 @@ function DrawerExample() {
                 Cancel
               </Button>
               <Link to="/checkout">
-              <Button colorScheme='blue' >Proceed</Button>
+              <Button colorScheme='blue' onClick={onClose}>Proceed</Button>
               </Link>
 
             </DrawerFooter>

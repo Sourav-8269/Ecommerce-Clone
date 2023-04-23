@@ -28,9 +28,8 @@ const Total = ({data}) => {
 
   return (
     <div>
-      {/* <h1></h1> */}
         <Heading color="gray.700" size="lg" >Grand Total: </Heading>
-        <Heading color="gray.700" size="lg" > &#8377; {total2}</Heading>
+        <Heading color="gray.800" size="lg" > &#8377; {total2}</Heading>
     </div>
   )
 }
