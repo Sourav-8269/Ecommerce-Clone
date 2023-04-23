@@ -23,18 +23,20 @@ const Home = () => {
 
   }, []);
   return (
-    <Box backgroundColor="whitesmoke" >
+    <Box backgroundColor="whitesmoke">
+      <Box mt={["17%","12%","6%"]} >
         <Gallery1 />
+      </Box>
         <Spacer />
         <Spacer/>
         <Box display="flex" mt="50"  mb="50" justifyContent="center" >
-          <Image  width="80%"  src="https://images-static.nykaa.com/uploads/a47a4ec4-140c-4035-8b85-629db661a638.jpg?tr=w-1200,cm-pad_resize" alt="" />
+          <Image  width={["90%","80%"]}  src="https://images-static.nykaa.com/uploads/a47a4ec4-140c-4035-8b85-629db661a638.jpg?tr=w-1200,cm-pad_resize" alt="" />
 
         </Box>
         <Gallery2 />
         <Heading as="h5" size="lg" mt="50" mb="30" fontWeight="400" color="blackAlpha.700" > TOP BRANDS</Heading>
         <SimpleGridExample1/>
-       
+        
         <Gallery3/>
         <Heading as="h5" size="lg" mt="50" mb="30" fontWeight="400" color="blackAlpha.700" >ONLY AT NYKAA</Heading>
         <SimpleGridExample2/>
