@@ -36,11 +36,11 @@ const Home = () => {
         <Gallery2 />
         <Heading as="h5" size="lg" mt="50" mb="30" fontWeight="400" color="blackAlpha.700" > TOP BRANDS</Heading>
         <SimpleGridExample1/>
-        
+
         <Gallery3/>
         <Heading as="h5" size="lg" mt="50" mb="30" fontWeight="400" color="blackAlpha.700" >ONLY AT NYKAA</Heading>
         <SimpleGridExample2/>
-        <Box bg="#fbe2e8" >
+        <Box bg="#fbe2e8" p="2%" >
           <img  src="https://images-static.nykaa.com/uploads/6892016b-f17f-4ddb-b463-452ef88fc8d6.png?tr=w-1200,cm-pad_resize" alt="" />
         <Gallery4/>
         </Box>

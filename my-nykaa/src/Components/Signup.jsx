@@ -16,7 +16,7 @@ import {
 
   import { AppContext } from './Context/AuthContext';
 
-  import { Link, Navigate, useNavigate } from 'react-router-dom';
+  import { Link, Navigate, json, useNavigate } from 'react-router-dom';
   import { useState,useContext } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   
@@ -27,7 +27,7 @@ import {
 
     const {login}=useContext(AppContext)
     const navigate=useNavigate();
-
+    const [name,setName]=useState("");
     const [email,setemail]=useState(null);
     const [password,setpassword]=useState(null);
     // console.log(email)
@@ -59,7 +59,7 @@ import {
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
+                    <Input type="text" value={name} onChange={(e)=>setName(e.target.value)} />
                   </FormControl>
                 </Box>
                 <Box>
@@ -104,8 +104,9 @@ import {
                       i++;
                       setloading(false);
                       // console.log(login)
-                      if(email!==null||password!==null){
-                        login(email,password)
+                      if(email!==null||password!==null||name!=null){
+                        console.log(name)
+                        login(email,password,name)
                         navigate("/login")
                       }
                       // console.log("Hii")

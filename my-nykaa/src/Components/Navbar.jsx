@@ -38,7 +38,7 @@ import { AppContext } from './Context/AuthContext';
 import { useContext } from 'react';  
 
   export default function WithSubnavigation() {
-
+    const name=JSON.parse(localStorage.getItem("name"))||null;
     const {isAuth} = useContext(AppContext);
     const { isOpen, onToggle } = useDisclosure();
     
@@ -124,7 +124,7 @@ import { useContext } from 'react';
                 bg: 'pink.300',
               }}>
                 {/* Sign in */}
-              Sourav
+              {name}
             </Button>}
             {!isAuth&&
             <Button

@@ -2,12 +2,12 @@ import React from 'react'
 import Carousel from 'better-react-carousel'
 
 function Gallery4(){
-    const style={width:"90%",margin:"auto"}
+    const style={width:"90%",margin:"auto",marginTop:"3%"}
   return (
     <div style={style}>
             {/* <h1 style={style}>SOurav</h1> */}
-        <Carousel cols={6} rows={1} gap={10} loop={true}  autoplay="1000" breakpoint="800" width="80%"  marginLeft="5%" >
-        <Carousel.Item width="100%" margin="auto">
+        <Carousel cols={6} rows={1} gap={10} loop={true}  autoplay={1000} breakpoint="600" width="80%"  marginLeft="5%" >
+        <Carousel.Item >
             <img width="100%"src="https://images-static.nykaa.com/uploads/f9cfaae2-c9b4-49ac-a41e-e87d4ad46d62.jpg?tr=w-200,cm-pad_resize" />
         </Carousel.Item>
         <Carousel.Item>

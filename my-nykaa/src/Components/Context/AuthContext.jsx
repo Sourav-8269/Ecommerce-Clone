@@ -9,10 +9,12 @@ const AuthContextProvider = ({children}) => {
     const [pass,setpass]=useState(null);
     const [arr,setarr]=useState([]);
     const [total,settotal]=useState(0);
+    const [name,setName]=useState("");
 
-    const login=(email,password)=>{
+    const login=(email,password,n)=>{
         setAuth(true);
-        setemail(email)
+        setName(n);
+        setemail(email);
         setpass(password);
     }
     const logout=()=>{
@@ -20,7 +22,7 @@ const AuthContextProvider = ({children}) => {
         setemail(null);
         setpass(null);
     }
-    const value={isAuth,login,logout,email,pass,arr,setarr,total,settotal};
+    const value={isAuth,login,logout,email,pass,arr,setarr,total,settotal,name};
   return (
     <AppContext.Provider value={value}>{children}</AppContext.Provider>
   )

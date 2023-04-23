@@ -17,8 +17,8 @@ import { useContext,useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function SimpleCard() {
-  const {email,pass}= useContext(AppContext);
-  console.log(email,pass)
+  const {email,pass,name}= useContext(AppContext);
+  console.log(email,pass,name)
   const navigate=useNavigate();
 
   const [checkemail,setcheckemail]=useState(null);
@@ -63,6 +63,7 @@ export default function SimpleCard() {
                 color={'white'}
                 onClick={()=>{
                   if(checkemail==email&&checkpass==pass){
+                    localStorage.setItem("name",JSON.stringify(name));
                     console.log("Success")
                     navigate("/");
                   }
