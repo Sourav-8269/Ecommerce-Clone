@@ -5,6 +5,7 @@ import {Heading} from "@chakra-ui/react"
 
 const Total = ({data}) => {
     const {total,settotal}=useContext(AppContext)
+    console.log(data,data.length)
     
     const [refresh,setres]=useState(false);
 //Total 2 is for calculating total pricing  
@@ -18,8 +19,8 @@ const Total = ({data}) => {
             }
         })
         // console.log(total)
-    }, [data]);
-
+    }, [data.length]);
+    console.log(total2);
     // useEffect(()=>{
 
     // },[refresh,total])

@@ -5,7 +5,11 @@ import ProductAddToCart from './AddProduct';
 import { useEffect,useContext } from 'react';
 import { Grid,SimpleGrid } from '@chakra-ui/react';
 import { AppContext } from '../Context/AuthContext';
+import { useToast } from '@chakra-ui/react';
+
 const Products = () => {
+  const toast=useToast();
+
     useEffect(() => {
         // console.log(run_results)
         
@@ -14,7 +18,14 @@ const Products = () => {
     // console.log(arr)
     const handleclick=(val)=>{
       // console.log(val)
-      console.log("clicked")
+      // console.log("clicked")
+      toast({
+        title: "Added to Cart",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+        position:"top"
+      });
       setarr([...arr,val])
       // console.log(arr)
   }
