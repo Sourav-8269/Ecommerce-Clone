@@ -14,16 +14,12 @@ import SimpleGridExample2 from './SimpleGrid2'
 import Cart from '../Products/Cart'
 import { AppContext } from '../Context/AuthContext'
 // const mdiHome = require('@iconify/icons-mdi/home');
-import { useContext,useEffect } from 'react'
 
 
 const Home = () => {
-  const {total}=useContext(AppContext);
-  useEffect(() => {
-
-  }, []);
+ 
   return (
-    <Box backgroundColor="whitesmoke">
+    <Box bg="whitesmoke">
       <Box mt={["17%","12%","6%"]} >
         <Gallery1 />
       </Box>

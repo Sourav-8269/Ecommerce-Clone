@@ -63,13 +63,12 @@ const Cart = () => {
         {/* <ProductAddToCart /> */}
         {/* <Grid templateColumns='repeat(1, 1fr)' gap={6} mt={5}> */}
         {data.map((e)=>(
-            <VStack key={e.url} gap={5} mb={5} p="5%" boxShadow="rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" > 
+            <VStack key={e.url} gap={5} mb={5}> 
                 {/* {settotal(total+1)} */}
                 <Box ml="90%" >
                     <DeleteIcon boxSize={6} cursor="pointer" onClick={()=>handleClick(e)} ></DeleteIcon>
-
                 </Box>
-                <img  src={e.image} alt="" />
+                <img  src={e.image} alt="product" />
                 <Heading size="md" as="h4"> {e.selection2}</Heading>
                 <Heading size="md" as="h4">Price: &#8377;{e.selection3}</Heading>
             </VStack>
