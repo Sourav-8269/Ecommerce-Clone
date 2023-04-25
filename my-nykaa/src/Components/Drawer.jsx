@@ -76,7 +76,7 @@ function DrawerExample() {
               {/* <Products/> */}
             </DrawerBody>
 
-            <DrawerFooter>
+            {!loading&&<DrawerFooter>
               <Button variant='outline' mr={3} onClick={onClose}>
                 Cancel
               </Button>
@@ -84,7 +84,7 @@ function DrawerExample() {
               <Button colorScheme='blue' onClick={onClose}>Proceed</Button>
               </Link>
 
-            </DrawerFooter>
+            </DrawerFooter>}
           </DrawerContent>
         </Drawer>
         </Box>

@@ -55,6 +55,12 @@ const Cart = () => {
             position:"top"
           });
         setdata(filteredData);
+        let tempArr=[];
+        for(let i=0;i<filteredData.length;i++){
+            tempArr.push(filteredData[i].selection2);
+        }
+        // console.log(tempArr)
+        setarr(tempArr)
     }
 
   return (

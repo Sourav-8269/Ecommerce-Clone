@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Modal,
     ModalOverlay,
@@ -18,6 +18,7 @@ import {
     Checkbox,
     allChecked,
     Stack,
+    useToast,
 
   } from '@chakra-ui/react'
 
@@ -29,9 +30,12 @@ import {
   } from '@chakra-ui/react'
 
   import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Checkout = () => {
-
+  let user=JSON.parse(localStorage.getItem("user"));
+  const navigate=useNavigate();
+  const toast=useToast();
     const [boolean,setboolean]=useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -42,14 +46,40 @@ const Checkout = () => {
   
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
+    const [name,setName]=useState("");
+    const [phone,setPhone]=useState("");
+    const [address,setAddress]=useState("");
 
     const handleclick=()=>{
+      // console.log(name,phone,address)
+      let obj={Name:name,Phone:phone,Address:address};
+      localStorage.setItem("user",JSON.stringify(obj));
+        toast({
+          title: "Redirecting to Home Page",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+          position:"top"
+        });
         if(boolean){
             setboolean(false)
         }else{
             setboolean(true)
         }
+        setTimeout(()=>{
+          navigate("/")
+          window.location.reload();
+        },3000)
     }
+
+    useEffect(()=>{
+      console.log(user)
+      if(user.Name!=""&&user.Phone!=""&&user.Address!=""){
+        setAddress(user.Address);
+        setName(user.Name);
+        setPhone(user.Phone);
+      }
+    },[])
         return (
           <Box mt={20}>
             <Box display="flex">
@@ -60,7 +90,7 @@ const Checkout = () => {
                 <Heading>Choose Address & Payment Option</Heading>
 
             <Box  padding="5%" border="5px solid whitesmoke" borderRadius="20px" width="50%" margin="auto"  mt={35}>
-            <Button padding="5%" onClick={onOpen}>Add New Address</Button>
+            <Button padding="5%" onClick={onOpen}>Add Address</Button>
             </Box>
             </Box>
             <Modal
@@ -71,21 +101,21 @@ const Checkout = () => {
             >
               <ModalOverlay />
               <ModalContent>
-                <ModalHeader>Create your account</ModalHeader>
+                <ModalHeader>Enter your Details</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
                   <FormControl>
                     <FormLabel>First name</FormLabel>
-                    <Input ref={initialRef} placeholder='Name' />
+                    <Input ref={initialRef} placeholder='Name' value={name} onChange={(e)=>setName(e.target.value)} />
                   </FormControl>
       
                   <FormControl mt={4}>
                     <FormLabel>Mobile</FormLabel>
-                    <Input placeholder='Mobile Number' />
+                    <Input placeholder='Mobile Number' value={phone} onChange={(e)=>setPhone(e.target.value)} />
                   </FormControl>
                   <FormControl mt={4}>
                     <FormLabel>Address</FormLabel>
-                    <Input placeholder='Add New Address' />
+                    <Input placeholder='Add New Address' value={address} onChange={(e)=>setAddress(e.target.value)} />
                   </FormControl>
                   <Checkbox
                   mt={6}
