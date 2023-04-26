@@ -11,14 +11,16 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  useToast,
 } from '@chakra-ui/react';
 import { AppContext } from './Context/AuthContext';
 import { useContext,useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function SimpleCard() {
+  const toast=useToast();
   const {email,pass,name}= useContext(AppContext);
-  console.log(email,pass,name)
+  // console.log(email,pass,name)
   const navigate=useNavigate();
 
   const [checkemail,setcheckemail]=useState(null);
@@ -63,8 +65,15 @@ export default function SimpleCard() {
                 color={'white'}
                 onClick={()=>{
                   if(checkemail==email&&checkpass==pass){
+                    toast({
+                      title: "Sign In Success",
+                      status: "success",
+                      duration: 2000,
+                      isClosable: true,
+                      position:"top"
+                    });
                     localStorage.setItem("name",JSON.stringify(name));
-                    console.log("Success")
+                    // console.log("Success")
                     navigate("/");
                   }
                 }}

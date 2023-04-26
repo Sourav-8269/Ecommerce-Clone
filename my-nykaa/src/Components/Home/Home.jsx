@@ -1,5 +1,5 @@
 import { Spacer,Stack,Box,Image,H1, Heading, SimpleGrid } from '@chakra-ui/react'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Products from '../Products/Products'
 import ProductAddToCart from "../Products/AddProduct"
 import Signin from '../Signin'

@@ -12,6 +12,7 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    useToast,
   } from '@chakra-ui/react';
 
   import { AppContext } from './Context/AuthContext';
@@ -21,6 +22,7 @@ import {
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   
   export default function SignupCard() {
+    const toast=useToast();
     const [showPassword, setShowPassword] = useState(false);
     const [loading,setloading]=useState(false);
     let i=0;
@@ -96,6 +98,13 @@ import {
                   bg={'blue.400'}
                   color={'white'}
                   onClick={(e)=>{
+                    toast({
+                      title: "Sign Up Success",
+                      status: "success",
+                      duration: 2000,
+                      isClosable: true,
+                      position:"top"
+                    });
                     setloading(true);
                     const time=setInterval(()=>{
                       if(i==5){
@@ -105,7 +114,7 @@ import {
                       setloading(false);
                       // console.log(login)
                       if(email!==null||password!==null||name!=null){
-                        console.log(name)
+                        // console.log(name)
                         login(email,password,name)
                         navigate("/login")
                       }
