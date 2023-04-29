@@ -52,6 +52,16 @@ const Checkout = () => {
 
     const handleclick=()=>{
       // console.log(name,phone,address)
+      if(name==""||phone==""||address==""){
+        toast({
+          title: "Please fill all fields",
+          status: "info",
+          duration: 2000,
+          isClosable: true,
+          position:"top"
+        });
+        return;
+      }
       let obj={Name:name,Phone:phone,Address:address};
       localStorage.setItem("user",JSON.stringify(obj));
         toast({
@@ -73,7 +83,7 @@ const Checkout = () => {
     }
 
     useEffect(()=>{
-      console.log(user)
+      // console.log(user)
       if(user!=null){
         if(user.Name!=""&&user.Phone!=""&&user.Address!=""){
           setAddress(user.Address);
