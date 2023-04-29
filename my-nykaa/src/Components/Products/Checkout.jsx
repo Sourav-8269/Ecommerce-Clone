@@ -33,7 +33,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 
 const Checkout = () => {
-  let user=JSON.parse(localStorage.getItem("user"));
+  let user=JSON.parse(localStorage.getItem("user"))||null;
   const navigate=useNavigate();
   const toast=useToast();
     const [boolean,setboolean]=useState(false);
@@ -74,10 +74,12 @@ const Checkout = () => {
 
     useEffect(()=>{
       console.log(user)
-      if(user.Name!=""&&user.Phone!=""&&user.Address!=""){
-        setAddress(user.Address);
-        setName(user.Name);
-        setPhone(user.Phone);
+      if(user!=null){
+        if(user.Name!=""&&user.Phone!=""&&user.Address!=""){
+          setAddress(user.Address);
+          setName(user.Name);
+          setPhone(user.Phone);
+        }
       }
     },[])
         return (
