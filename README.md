@@ -3,7 +3,7 @@
 
 An e-commerce website for clothes and accessories.
 
-Live:https://nykaaone.vercel.app/
+Live:https://my-nykaa.vercel.app/
 
 ## Features
 
